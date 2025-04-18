@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pokedex_app/models/pokemon_model.dart';
+import 'package:pokedex_app/presentation/widgets/cards/pokemon_card.dart';
 
 // ignore: must_be_immutable
 class HomeScreen extends StatelessWidget {
@@ -41,13 +42,19 @@ class HomeScreen extends StatelessWidget {
                   crossAxisCount: 2,
                   crossAxisSpacing: 10,
                   mainAxisSpacing: 10,
+                  childAspectRatio: (12 / 16),
                 ),
-                itemCount: 15,
+                itemCount: 10,
                 itemBuilder: (context, index) {
-                  return Container(
-                    height: 75,
-                    decoration: BoxDecoration(color: Colors.greenAccent),
-                    child: Text('Pikachu'),
+                  return SizedBox(
+                    height: 300,
+                    child: PokemonCard(
+                      id: '',
+                      name: 'Hydreigon2',
+                      types: ['Psquico', 'Volador'],
+                      imagePath: 'assets/images/ditto.png',
+                      background: Colors.blue,
+                    ),
                   );
                 },
               ),
